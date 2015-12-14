@@ -1,0 +1,8 @@
+{
+	"scenes" : ["Main","Contents"],
+	"files" : [],
+
+	"changeSource" : true,
+	"theme" : "base",
+	"modules" : ["ui.*"]
+}

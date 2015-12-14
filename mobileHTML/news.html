@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>        
+        <style type="text/css">
+        </style>
+	</head>
+	<body onload="onLoadNews();"  style="background-color:#000000;">
+    <div id="users" style="background-color:#000000; color:#ffffff; visibility:hidden;"></div>
+    <script type="text/javascript">
+     var divZs = "[$divZs$]";
+     if(!document.body.clientWidth) {
+           var time =  setInterval(function(){
+                                                        document.getElementById("users").style.visibility = "hidden";
+                                                      if(document.body.clientWidth){
+                                                      document.getElementById("users").style.width = document.body.clientWidth+"px";
+                                                      onLoadNews();
+                                                      setTimeout(function(){document.getElementById("users").style.visibility = "visible";},2000);
+                                                        clearInterval(time);
+                                                        time = null;
+                                                      }
+            },500);
+        }
+        else {
+         document.getElementById("users").style.width = document.body.clientWidth+"px";
+            document.getElementById("users").style.visibility = "visible";
+        }
+    function onLoadNews(){
+            document.getElementById("users").innerHTML = divZs;
+            document.getElementById("users").style.width = document.body.clientWidth + "px";
+            document.getElementById("users").style.visibility = "visible";
+            
+            onloadSetting();
+                  location.href = "command://multicontrol/action?test=1";
+                 //setTimeout(function(){location.href ="command://getmyuuid/onUUIDEvent";},2000);
+        
+    }
+    
+    	function onloadSetting() {
+     if(document.getElementById("cat0")){
+				for(i=0; i<3; i++) {
+					document.getElementById("cat"+i).style.width = ((document.body.clientWidth - 4)/3) +'px';
+					document.getElementById("cat"+i+"text").style.width = ((document.body.clientWidth - 4)/3) +'px';
+				}
+            }
+		}
+        
+          if(document.getElementById('popup')){
+				document.getElementById('popup').style.height = window.innerHeight*0.9 + 'px';
+                document.getElementById('popupBg').style.height =  window.innerHeight + 'px';
+                document.getElementById('popupBg').style.width = document.body.clientWidth +'px';
+                document.body.height = window.innerHeight + 'px';
+                document.body.style.overflow = "hidden";
+                document.getElementById('users').style.overflow = "hidden";
+               document.getElementById('users').style.height =  window.innerHeight + 'px';
+			}
+        
+        function getMenuAction(num){
+        location.href = "command://multicontrol/action?menu="+num;
+            
+        }
+        
+        
+        function getTitleAction(num, cat){
+        location.href = "command://multicontrol/action?title="+num+"||"+cat;
+            
+        }
+        
+        
+        function prev(){
+            location.href = "command://multicontrol/action?button=prev";
+        }
+         
+         function next(){
+            location.href = "command://multicontrol/action?button=next";
+        }
+        
+        function watchInTv(){
+            document.getElementById("but").style.display = "none";
+            document.getElementById("but2").style.display = "block";
+            location.href = "command://multicontrol/action?button=watch";
+        }
+        
+        function onUUIDEvent(uuid){
+					MyUUID= uuid;
+                  var newArr = userIDFROMTV.split(",");
+                   for(var i=0;i<newArr.length;i++)
+                   {
+                   var viewS = "div"+(i+1);
+                            document.getElementById(viewS).style.width = document.body.clientWidth+"px";
+                        if(newArr[i] == MyUUID){
+                               var view = "div"+(i+1);
+                               document.getElementById(view).style.display = "block";
+                            }
+                            else if(!newArr[i]){
+                                document.getElementById('div1').style.display = "block";
+                            }
+                           
+                  }
+                    onloadSetting();
+				}
+        
+             function getNextAction()
+			{
+			    document.getElementById("nextImg1").style.display = "none";
+                document.getElementById("nextImg2").style.display = "block";
+			    location.href ="command://multicontrol/action?mode=next";				
+			}
+            
+            function getPreviousAction(){
+                document.getElementById("prevImg1").style.display = "none";
+                document.getElementById("prevImg2").style.display = "block";
+			   location.href ="command://multicontrol/action?mode=previous";							
+			}
+            
+             function finishMe(){
+                location.href ="command://multicontrol/action?button = me";
+			
+            }
+            
+            function finishAll(){
+               location.href ="command://multicontrol/action?button = all";
+			
+            }
+            
+            	function onClickClose(){
+			document.getElementById('popup').style.display = "none";
+			document.getElementById('popupBg').style.display = "none";
+            document.body.style.overflow = "visible";
+                document.getElementById('users').style.overflow = "visible";
+		}
+            
+        
+       
+    </script>
+    </body>
+</html>

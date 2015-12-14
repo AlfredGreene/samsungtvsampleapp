@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget>
+	<ThumbIcon>icon/default_106.png</ThumbIcon>
+	<BigThumbIcon>icon/default_115.png</BigThumbIcon>
+	<ListIcon>icon/default_85.png</ListIcon>
+    <BigListIcon>icon/default_95.png</BigListIcon>
+	
+	<category></category>
+	<autoUpdate>n</autoUpdate>
+
+	<cpname>Samsung</cpname>
+	<cpauthjs></cpauthjs>
+	<login>n</login>
+
+	<ver>1.00</ver>
+	<mgrver></mgrver>
+	
+	<fullwidget>y</fullwidget>
+	<srcctl>y</srcctl>
+	<ticker>n</ticker>
+	<childlock>n</childlock>
+	<audiomute>n</audiomute>
+	<videomute>n</videomute>
+	<dcont>y</dcont>
+	<movie>y</movie>
+	<type>user</type>
+
+	<widgetname>PunkRock News App</widgetname>
+	<description>Samsung Framework default application</description>
+
+	<width>960</width>
+	<height>540</height>
+
+	<author>
+		<name> PunkRock.io </name>
+		<email></email>
+		<link>http://www.punkrock.io/</link>
+		<organization>SuperLogical Ltd.</organization>
+	</author>
+</widget>
