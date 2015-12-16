@@ -36,7 +36,8 @@ function onStart() {
 
         var json = {
             name: user.name,
-            url: 'http://punkrock.io/XML/category1.xml'
+            // url: 'http://punkrock.io/XML/category1.xml'
+            url: 'http://159.203.113.84/api/friend/'+user.id+'/post/xml'
         };
         initData.push(json);
 
